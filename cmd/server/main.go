@@ -4,17 +4,14 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/grapinou/club-manager/internal/handlers"
+	"github.com/grapinou/club-manager/internal/router"
 )
 
 func main() {
 
-	http.HandleFunc("/", handlers.HomeHandler)
-	http.HandleFunc("/club", handlers.ClubHandler)
-	http.HandleFunc("/contact", handlers.ContactHandler)
-	http.HandleFunc("/rules", handlers.RulesHandler)
+	mux := router.New()
 
 	fmt.Println("Serveur lancé sur http://localhost:8080")
 
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":8080", mux)
 }
