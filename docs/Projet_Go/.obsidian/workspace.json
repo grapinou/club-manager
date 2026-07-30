@@ -1,0 +1,232 @@
+{
+  "main": {
+    "id": "981979b35c82ab47",
+    "type": "split",
+    "children": [
+      {
+        "id": "d9d832464f32d012",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b1551fdf16e54182",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Vue graphique"
+            }
+          },
+          {
+            "id": "013ced09b563dd0a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ROUTEUR.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ROUTEUR"
+            }
+          },
+          {
+            "id": "3119c37e2fa973bc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Routeur ServeMux.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Routeur ServeMux"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "4f7e61c8a660d665",
+    "type": "split",
+    "children": [
+      {
+        "id": "1bfd43462e653bcd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a56dfb2f3805dfa4",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorateur de fichiers"
+            }
+          },
+          {
+            "id": "fa79535521212b64",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Rechercher"
+            }
+          },
+          {
+            "id": "7badfb417c7a2647",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Signets"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "d8a9ed5b442faaea",
+    "type": "split",
+    "children": [
+      {
+        "id": "e4c671d87ef02d6d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d51b0b7a8c875d66",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Feuille de route projet go.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Rétrolien pour Feuille de route projet go"
+            }
+          },
+          {
+            "id": "e375f5f57f1148bf",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Feuille de route projet go.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Liens sortants de Feuille de route projet go"
+            }
+          },
+          {
+            "id": "35d22130b8a2147a",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Mots-clés"
+            }
+          },
+          {
+            "id": "73be1db29fcda747",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Toutes les propriétés"
+            }
+          },
+          {
+            "id": "1ffeb78bce487296",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Feuille de route projet go.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Plan de Feuille de route projet go"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Ouvrir le sélecteur rapide": false,
+      "graph:Ouvrir la vue graphique": false,
+      "canvas:Créer une nouvelle toile": false,
+      "daily-notes:Ouvrir la note quotidienne": false,
+      "templates:Insérer le modèle": false,
+      "command-palette:Ouvrir la palette de commandes": false,
+      "bases:Créer une nouvelle base": false
+    }
+  },
+  "active": "b1551fdf16e54182",
+  "lastOpenFiles": [
+    "Go/Fonction New.md",
+    "Routeur ServeMux.md",
+    "ROUTEUR.md",
+    "Go/SERVEUR GO.md",
+    "Go/FONCTION.md",
+    "Go/io.Writer.md",
+    "Go/print fmt.Fprintln.md",
+    "Go/PRINT.md",
+    "Feuille de route projet go.md",
+    "Go/print w http.ResponseWriter, r *http.Request.md",
+    "01 - Architecture minimale en Go/ARCHITECTURE MINIMALE EN GO.md",
+    "00 - Initialisation projet Go/go mod init.md",
+    "Go/PACKAGE.md",
+    "Go/Package import.md",
+    "Go/Fonction exportation.md",
+    "trame projet.md",
+    "Go/INTERFACE.md",
+    "Go/POINTEUR.md",
+    "00 - Initialisation projet Go/Nouveau projet Go - Initialisation.md"
+  ]
+}
