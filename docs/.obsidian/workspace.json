@@ -51,12 +51,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00 - INDEX.md",
+                "file": "Projet_Go/01 - Architecture Go/01 - SEPARATION DES RESPONSABILITES.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "00 - INDEX"
+              "title": "01 - SEPARATION DES RESPONSABILITES"
             }
           }
         ],
@@ -80,7 +80,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Explorateur de fichiers"
@@ -222,10 +224,12 @@
       "bases:Créer une nouvelle base": false
     }
   },
-  "active": "5ddde9f61bde1bd8",
+  "active": "909f2103c841bbbd",
   "lastOpenFiles": [
-    "Projet_Go/Go/08.01 - Routeur ServeMux.md",
+    "00 - Base Git/00 - BASE GIT.md",
+    "00 - Base Git/01 - git status.md",
     "00 - INDEX.md",
+    "Projet_Go/Go/08.01 - Routeur ServeMux.md",
     "Projet_Go/Go/08 - ROUTEUR.md",
     "Projet_Go/Go/06.02 - io.Writer.md",
     "Projet_Go/Feuille de route projet go.md",
@@ -242,7 +246,6 @@
     "Projet_Go/00 - Initialisation projet Go/00 - INITIALISATION PROJET.md",
     "Projet_Go/00 - Initialisation projet Go/01 - Installer la dernière version de Go.md",
     "02 - Vim commandes/00 - VIM COMMANDES.md",
-    "00 - Base Git/00 - BASE GIT.md",
     "00 - Base Git/07 - BRANCHE.md"
   ]
 }
