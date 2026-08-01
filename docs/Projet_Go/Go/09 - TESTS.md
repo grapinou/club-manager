@@ -2,6 +2,8 @@
 ---
 
 - [[09.01 - Anatomie d'un premier test HTTP en Go]]
+- [[09.02 t.Helper()]]
+
 # Pourquoi tester son code ?
 
 ## Définition
