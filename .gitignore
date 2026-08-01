@@ -25,3 +25,6 @@ coverage.out
 .obsidian/workspace-mobile.json
 .obsidian/cache/
 .trash/
+
+# review diff
+review.diff
