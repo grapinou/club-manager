@@ -8,7 +8,13 @@ import (
 
 func HomeHandler(w http.ResponseWriter, r *http.Request) {
 
-	err := views.RenderHome(w)
+	data := views.HomeData{
+		Title:       "Club Manager",
+		Heading:     "Bienvenue sur Club Manager",
+		Description: "Une application destinée à faciliter la gestion d'une association.",
+	}
+
+	err := views.RenderHome(w, data)
 
 	if err != nil {
 		http.Error(
