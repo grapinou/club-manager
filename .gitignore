@@ -26,5 +26,9 @@ coverage.out
 .obsidian/cache/
 .trash/
 
+# État local de l'interface Obsidian
+docs/.obsidian/workspace*.json
+docs/.obsidian/graph.json
+
 # review diff
 review.diff

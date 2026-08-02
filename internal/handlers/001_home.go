@@ -1,10 +1,21 @@
 package handlers
 
 import (
-	"fmt"
 	"net/http"
+
+	"github.com/grapinou/club-manager/internal/views"
 )
 
 func HomeHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintln(w, "Bienvenue sur Club Manager")
+
+	err := views.RenderHome(w)
+
+	if err != nil {
+		http.Error(
+			w,
+			"Erreur interne du serveur",
+			http.StatusInternalServerError,
+		)
+	}
+
 }
