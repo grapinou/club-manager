@@ -1,0 +1,36 @@
+{{ define "base" }}
+
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>{{ .Title }}</title>
+</head>
+
+<body>
+
+    <header>
+        <p>Club Manager</p>
+    </header>
+
+    <main>
+        {{ template "content" . }}
+    </main>
+
+    <footer>
+        <p>Club Manager</p>
+    </footer>
+
+</body>
+
+</html>
+
+{{ end }}

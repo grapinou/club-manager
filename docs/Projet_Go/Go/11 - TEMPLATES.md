@@ -3,6 +3,8 @@
 
 - [[11.01 - embed]]
 - [[11.02 - ParseFS]]
+- [[11.03 - Passage de données]]
+- [[11.04 - Layout commun et composition des templates]]
 ## Architecture obtenue
 
 ```

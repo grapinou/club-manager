@@ -8,8 +8,9 @@ import (
 
 // homeFiles contient les fichiers intégrés correspondant
 // au template de la page d'accueil.
-//
-//go:embed templates/001_home.html
+
+//go:embed templates/layouts/base.html
+//go:embed templates/pages/001_home.html
 var homeFiles embed.FS
 
 type HomeData struct {
@@ -23,7 +24,9 @@ type HomeData struct {
 // template.Must arrête immédiatement le programme si le template
 // contient une erreur de syntaxe.
 var homeTemplate = template.Must(
-	template.ParseFS(homeFiles, "templates/001_home.html"),
+	template.ParseFS(homeFiles,
+		"templates/layouts/base.html",
+		"templates/pages/001_home.html"),
 )
 
 // RenderHome exécute le template de la page d'accueil
@@ -31,7 +34,7 @@ var homeTemplate = template.Must(
 func RenderHome(w io.Writer, data HomeData) error {
 	return homeTemplate.ExecuteTemplate(
 		w,
-		"001_home.html",
+		"base", // donne le nom défni par {{ define }} et non le nom du fichier
 		data,
 	)
 }
