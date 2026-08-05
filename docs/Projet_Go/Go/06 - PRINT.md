@@ -2,6 +2,10 @@
 
 ---
 
+- [[06.01 - fmt.Fprintln]]
+- [[06.02 - io.Writer]]
+- [[06.03 - fmt ou log]]
+- [[06.04 - Les verbes de formatage avec fmt]]
 
 Concernant la dénomination :
 
