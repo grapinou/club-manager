@@ -4,10 +4,17 @@ import (
 	"net/http"
 	"net/http/httptest"
 	"testing"
+
+	"github.com/grapinou/club-manager/internal/config"
 )
 
 func TestUnknownRoute(t *testing.T) {
-	mux := New()
+
+	cfg := config.Config{
+		SiteName: "Club Manager",
+	}
+
+	mux := New(cfg)
 
 	request := httptest.NewRequest(
 		http.MethodGet,

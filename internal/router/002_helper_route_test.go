@@ -5,6 +5,8 @@ import (
 	"net/http/httptest"
 	"strings"
 	"testing"
+
+	"github.com/grapinou/club-manager/internal/config"
 )
 
 func testRoute(
@@ -15,7 +17,13 @@ func testRoute(
 
 	t.Helper()
 
-	mux := New()
+	// indépendance du test vis à vis de load.
+	// construction de la donnée nécessaire pour tester la route
+	cfg := config.Config{
+		SiteName: "Club Manager",
+	}
+
+	mux := New(cfg)
 
 	request := httptest.NewRequest(http.MethodGet, route, nil)
 	response := httptest.NewRecorder()

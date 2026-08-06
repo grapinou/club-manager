@@ -3,10 +3,13 @@ package router
 import (
 	"net/http"
 
+	"github.com/grapinou/club-manager/internal/config"
 	"github.com/grapinou/club-manager/internal/handlers"
 )
 
-func New() *http.ServeMux {
+func New(cfg config.Config) *http.ServeMux {
+
+	_ = cfg
 
 	mux := http.NewServeMux()
 

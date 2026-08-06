@@ -20,7 +20,7 @@ func main() {
 		)
 	}
 
-	mux := router.New()
+	mux := router.New(cfg)
 
 	log.Println("Serveur lancé sur http://localhost:8080")
 
@@ -28,5 +28,4 @@ func main() {
 		log.Fatal(err)
 	}
 
-	_ = cfg
 }
