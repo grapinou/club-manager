@@ -264,3 +264,4 @@ on peut le lire presque comme une phrase :
 - Go fournit un `http.ResponseWriter`.
 - Le Handler lit `r` et écrit dans `w`.
 - Le Handler est un callback : il est appelé automatiquement par le serveur HTTP.
+

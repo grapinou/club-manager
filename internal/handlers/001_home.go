@@ -3,25 +3,30 @@ package handlers
 import (
 	"net/http"
 
+	"github.com/grapinou/club-manager/internal/config"
 	"github.com/grapinou/club-manager/internal/views"
 )
 
-func HomeHandler(w http.ResponseWriter, r *http.Request) {
+func HomeHandler(cfg config.Config) http.HandlerFunc {
 
-	data := views.HomeData{
-		Title:       "Club Manager",
-		Heading:     "Bienvenue sur Club Manager",
-		Description: "Une application destinée à faciliter la gestion d'une association.",
-	}
+	return func(w http.ResponseWriter, r *http.Request) {
 
-	err := views.RenderHome(w, data)
+		data := views.HomeData{
+			Title:       cfg.SiteName,
+			Heading:     "Bienvenue sur " + cfg.SiteName,
+			Description: "Une application destinée à faciliter la gestion d'une association.",
+		}
 
-	if err != nil {
-		http.Error(
-			w,
-			"Erreur interne du serveur",
-			http.StatusInternalServerError,
-		)
+		err := views.RenderHome(w, data)
+
+		if err != nil {
+			http.Error(
+				w,
+				"Erreur interne du serveur",
+				http.StatusInternalServerError,
+			)
+		}
+
 	}
 
 }
