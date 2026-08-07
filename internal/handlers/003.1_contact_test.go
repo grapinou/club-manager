@@ -1,7 +1,16 @@
 package handlers
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/grapinou/club-manager/internal/config"
+)
 
 func TestContactHandler(t *testing.T) {
-	testHandler(t, "/contact", "Comment nous contacter ?", ContactHandler)
+
+	cfg := config.Config{
+		SiteName: "test sur /contact",
+	}
+
+	testHandler(t, "/contact", "Contact - "+cfg.SiteName, ContactHandler(cfg))
 }

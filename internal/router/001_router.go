@@ -13,8 +13,8 @@ func New(cfg config.Config) *http.ServeMux {
 
 	mux.HandleFunc("GET /{$}", handlers.HomeHandler(cfg))
 	mux.HandleFunc("GET /club", handlers.ClubHandler(cfg))
-	mux.HandleFunc("GET /contact", handlers.ContactHandler)
-	mux.HandleFunc("GET /rules", handlers.RulesHandler)
+	mux.HandleFunc("GET /contact", handlers.ContactHandler(cfg))
+	mux.HandleFunc("GET /rules", handlers.RulesHandler(cfg))
 
 	return mux
 

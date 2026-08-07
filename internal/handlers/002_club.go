@@ -12,6 +12,7 @@ func ClubHandler(cfg config.Config) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 
 		data := views.ClubData{
+			SiteName:    cfg.SiteName,
 			Title:       "Le club - " + cfg.SiteName,
 			Heading:     "Présentation du club",
 			Description: "Découvrez l'association, son histoire et ses valeurs.",

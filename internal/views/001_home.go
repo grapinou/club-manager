@@ -14,6 +14,7 @@ import (
 var homeFiles embed.FS
 
 type HomeData struct {
+	SiteName    string
 	Title       string
 	Heading     string
 	Description string

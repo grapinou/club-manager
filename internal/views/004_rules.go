@@ -11,6 +11,7 @@ import (
 var rulesFiles embed.FS
 
 type RulesData struct {
+	SiteName    string
 	Title       string
 	Heading     string
 	Description string

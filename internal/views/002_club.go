@@ -16,6 +16,7 @@ var clubFiles embed.FS
 // ClubData contient les données nécessaires
 // à l'affichage de la page du club.
 type ClubData struct {
+	SiteName    string
 	Title       string
 	Heading     string
 	Description string
