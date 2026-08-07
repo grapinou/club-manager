@@ -3,6 +3,7 @@
 ---
 
 - [[12.01 - Charger et tester une configuration JSON en Go]]
+- [[12.02 - Transmettre une configuration de main jusqu'aux handlers]]
 # JSON et fichiers de configuration
 
 ## Objectif
