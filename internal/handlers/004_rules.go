@@ -1,11 +1,26 @@
 package handlers
 
 import (
-	"fmt"
 	"net/http"
+
+	"github.com/grapinou/club-manager/internal/views"
 )
 
 func RulesHandler(w http.ResponseWriter, r *http.Request) {
 
-	fmt.Fprintln(w, "Règlement intérieur")
+	data := views.RulesData{
+		Title:       "Règlement",
+		Heading:     "Règlement intérieur",
+		Description: "Tous les membres doivent respecter le règlement intérieur suivant :",
+	}
+
+	err := views.RenderRules(w, data)
+
+	if err != nil {
+		http.Error(
+			w,
+			"Erreur interne du serveur",
+			http.StatusInternalServerError,
+		)
+	}
 }
