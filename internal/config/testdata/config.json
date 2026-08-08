@@ -1,3 +1,13 @@
 {
-    "site_name": "Club Manager"
+    "site_name": "Club Manager",
+
+    "where": {
+        "heading": "Où nous trouver ?",
+        "description": "Nous sommes au 3 rue de Perlinpinpin"
+    },
+
+    "when": {
+        "heading": "Quand nous trouver ?",
+        "description": "Nous sommes disponibles tous les soirs de 20h à 22h. Pour davantage d'informations, nous contacter."
+    }
 }

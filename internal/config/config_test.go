@@ -13,12 +13,30 @@ func TestLoad(t *testing.T) {
 	}
 
 	expectedSiteName := "Club Manager"
+	expectedWhereHeading := "Où nous trouver ?"
+	expectedWhenDescription := "Nous sommes disponibles tous les soirs de 20h à 22h. Pour davantage d'informations, nous contacter."
 
 	if cfg.SiteName != expectedSiteName {
 		t.Errorf(
 			"nom du site obtenu : %q, nom du site attendu : %q",
 			cfg.SiteName,
 			expectedSiteName,
+		)
+	}
+
+	if cfg.Where.Heading != expectedWhereHeading {
+		t.Errorf(
+			"where heading obtenu : %q, where heading attendu : %q",
+			cfg.Where.Heading,
+			expectedWhereHeading,
+		)
+	}
+
+	if cfg.When.Description != expectedWhenDescription {
+		t.Errorf(
+			"when description obtenu : %q, when description attendu : %q",
+			cfg.When.Description,
+			expectedWhenDescription,
 		)
 	}
 

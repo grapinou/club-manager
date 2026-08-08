@@ -9,7 +9,19 @@ import (
 // Config contient les paramètres généraux
 // chargés au démarrage de l'application.
 type Config struct {
-	SiteName string `json:"site_name"`
+	SiteName string      `json:"site_name"`
+	Where    WhereConfig `json:"where"`
+	When     WhenConfig  `json:"when"`
+}
+
+type WhereConfig struct {
+	Heading     string `json:"heading"`
+	Description string `json:"description"`
+}
+
+type WhenConfig struct {
+	Heading     string `json:"heading"`
+	Description string `json:"description"`
 }
 
 // Load ouvre le fichier situé au chemin reçu,

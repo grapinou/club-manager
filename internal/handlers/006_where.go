@@ -14,8 +14,8 @@ func WhereHandler(cfg config.Config) http.HandlerFunc {
 		data := views.WhereData{
 			SiteName:    cfg.SiteName,
 			Title:       "Où - " + cfg.SiteName,
-			Heading:     "Où nous trouver ?",
-			Description: "Nous sommes au 3 rue de Perlinpinpin",
+			Heading:     cfg.Where.Heading,
+			Description: cfg.Where.Description,
 		}
 
 		err := views.RenderWhere(w, data)

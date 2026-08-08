@@ -14,8 +14,8 @@ func WhenHandler(cfg config.Config) http.HandlerFunc {
 		data := views.WhenData{
 			SiteName:    cfg.SiteName,
 			Title:       "Quand - " + cfg.SiteName,
-			Heading:     "Quand nous trouver ?",
-			Description: "Nous sommes disponible tous les soir de 20h à 22h. Pour davantage d'information, nous contacter.",
+			Heading:     cfg.When.Heading,
+			Description: cfg.When.Description,
 		}
 
 		err := views.RenderWhen(w, data)
