@@ -8,9 +8,14 @@ import (
 
 func TestContactHandler(t *testing.T) {
 
-	cfg := config.Config{
-		SiteName: "test sur /contact",
+	contactCfg := config.ContactConfig{
+		Title: "Contact de test",
 	}
 
-	testHandler(t, "/contact", "Contact - "+cfg.SiteName, ContactHandler(cfg))
+	cfg := config.Config{
+		SiteName: "test sur /contact",
+		Contact:  contactCfg,
+	}
+
+	testHandler(t, "/contact", "Contact de test", ContactHandler(cfg))
 }

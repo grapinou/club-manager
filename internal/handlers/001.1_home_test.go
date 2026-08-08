@@ -8,9 +8,14 @@ import (
 
 func TestHomeHandler(t *testing.T) {
 
-	cfg := config.Config{
-		SiteName: "Club Manager",
+	homeCfg := config.HomeConfig{
+		Title: "Accueil de test",
 	}
 
-	testHandler(t, "/", "Bienvenue", HomeHandler(cfg))
+	cfg := config.Config{
+		SiteName: "Club Manager",
+		Home:     homeCfg,
+	}
+
+	testHandler(t, "/", "Accueil de test", HomeHandler(cfg))
 }

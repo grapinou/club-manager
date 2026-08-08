@@ -12,32 +12,56 @@ func TestLoad(t *testing.T) {
 		)
 	}
 
-	expectedSiteName := "Club Manager"
-	expectedWhereHeading := "Où nous trouver ?"
-	expectedWhenDescription := "Nous sommes disponibles tous les soirs de 20h à 22h. Pour davantage d'informations, nous contacter."
+	expected := Config{
 
-	if cfg.SiteName != expectedSiteName {
-		t.Errorf(
-			"nom du site obtenu : %q, nom du site attendu : %q",
-			cfg.SiteName,
-			expectedSiteName,
-		)
-	}
+		SiteName: "TCR Club Manager",
 
-	if cfg.Where.Heading != expectedWhereHeading {
-		t.Errorf(
-			"where heading obtenu : %q, where heading attendu : %q",
-			cfg.Where.Heading,
-			expectedWhereHeading,
-		)
-	}
+		Home: HomeConfig{
+			Title:       "Accueil test",
+			Heading:     "Bienvenue !",
+			Description: "La Team Cat Ride (TCR) vous accueille sur son site.",
+		},
 
-	if cfg.When.Description != expectedWhenDescription {
+		Club: ClubConfig{
+			Title:       "Le Club test",
+			Heading:     "Team Cat Ride",
+			Description: "TCR est là pour t'accompagner et te faire progresser en vélo.",
+		},
+
+		Contact: ContactConfig{
+			Title:        "Contact test",
+			Heading:      "Contacter TCR",
+			Description:  "Il est possible de nous contacter par email ou par téléphone.",
+			EmailAddress: "teamcatride@miaoumail.com",
+			PhoneNumber:  "00-01-02-03-04",
+		},
+
+		Rules: RulesConfig{
+			Title:       "Règlement test",
+			Heading:     "Règlement intérieur",
+			Description: "Chaque cat rider doit être poli et à l'heure.",
+		},
+
+		Where: WhereConfig{
+			Title:       "Où test",
+			Heading:     "Où nous trouver ?",
+			Description: "Nous sommes au 9 rue Chat Botté, à Catville",
+		},
+
+		When: WhenConfig{
+			Title:       "Quand test",
+			Heading:     "Quand nous trouver ?",
+			Description: "Nous sommes disponibles tous les soirs de 20h à 22h. Pour davantage d'informations, nous contacter.",
+		}}
+
+	if cfg != expected {
+
 		t.Errorf(
-			"when description obtenu : %q, when description attendu : %q",
-			cfg.When.Description,
-			expectedWhenDescription,
+			"configuration obtenue : %#v\nconfiguration attendue : %#v",
+			cfg,
+			expected,
 		)
+
 	}
 
 }

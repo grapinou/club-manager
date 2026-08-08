@@ -13,9 +13,9 @@ func HomeHandler(cfg config.Config) http.HandlerFunc {
 
 		data := views.HomeData{
 			SiteName:    cfg.SiteName,
-			Title:       cfg.SiteName,
-			Heading:     "Bienvenue sur " + cfg.SiteName,
-			Description: "Une application destinée à faciliter la gestion d'une association.",
+			Title:       cfg.Home.Title + " - " + cfg.SiteName,
+			Heading:     cfg.Home.Heading,
+			Description: cfg.Home.Description,
 		}
 
 		err := views.RenderHome(w, data)

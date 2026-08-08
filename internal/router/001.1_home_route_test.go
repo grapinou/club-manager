@@ -3,5 +3,5 @@ package router
 import "testing"
 
 func TestHomeRoute(t *testing.T) {
-	testRoute(t, "/", "Bienvenue")
+	testRoute(t, "/", "Accueil")
 }

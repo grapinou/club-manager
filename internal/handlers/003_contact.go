@@ -13,11 +13,11 @@ func ContactHandler(cfg config.Config) http.HandlerFunc {
 
 		data := views.ContactData{
 			SiteName:     cfg.SiteName,
-			Title:        "Contact - " + cfg.SiteName,
-			Heading:      "Comment nous contacter ?",
-			Description:  "Vous pouvez nous joindre par téléphone ou par mail",
-			EmailAddress: "clubmanager@mail.com",
-			PhoneNumber:  "07-00-00-00-07",
+			Title:        cfg.Contact.Title + " - " + cfg.SiteName,
+			Heading:      cfg.Contact.Heading,
+			Description:  cfg.Contact.Description,
+			EmailAddress: cfg.Contact.EmailAddress,
+			PhoneNumber:  cfg.Contact.PhoneNumber,
 		}
 
 		err := views.RenderContact(w, data)

@@ -10,9 +10,15 @@ func TestClubHandler(t *testing.T) {
 
 	// pour vérifier que la transmission de données provient de ce cfg
 	// on le remplace par un autre nom
-	cfg := config.Config{
-		SiteName: "test sur /club",
+
+	clubCfg := config.ClubConfig{
+		Title: "Le Club de test",
 	}
 
-	testHandler(t, "/club", "Le club - "+cfg.SiteName, ClubHandler(cfg))
+	cfg := config.Config{
+		SiteName: "test sur /club",
+		Club:     clubCfg,
+	}
+
+	testHandler(t, "/club", "Le Club de test", ClubHandler(cfg))
 }

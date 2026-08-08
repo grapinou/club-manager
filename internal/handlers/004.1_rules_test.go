@@ -8,9 +8,14 @@ import (
 
 func TestRulesHandler(t *testing.T) {
 
-	cfg := config.Config{
-		SiteName: "test sur /rules",
+	rulesCfg := config.RulesConfig{
+		Title: "Règlement de test",
 	}
 
-	testHandler(t, "/rules", "Règlement - "+cfg.SiteName, RulesHandler(cfg))
+	cfg := config.Config{
+		SiteName: "test sur /rules",
+		Rules:    rulesCfg,
+	}
+
+	testHandler(t, "/rules", "Règlement de test", RulesHandler(cfg))
 }

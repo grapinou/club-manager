@@ -13,7 +13,7 @@ func WhereHandler(cfg config.Config) http.HandlerFunc {
 
 		data := views.WhereData{
 			SiteName:    cfg.SiteName,
-			Title:       "Où - " + cfg.SiteName,
+			Title:       cfg.Where.Title + " - " + cfg.SiteName,
 			Heading:     cfg.Where.Heading,
 			Description: cfg.Where.Description,
 		}

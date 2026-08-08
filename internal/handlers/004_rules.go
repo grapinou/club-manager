@@ -13,9 +13,9 @@ func RulesHandler(cfg config.Config) http.HandlerFunc {
 
 		data := views.RulesData{
 			SiteName:    cfg.SiteName,
-			Title:       "Règlement - " + cfg.SiteName,
-			Heading:     "Règlement intérieur",
-			Description: "Tous les membres doivent respecter le règlement intérieur suivant :",
+			Title:       cfg.Rules.Title + " - " + cfg.SiteName,
+			Heading:     cfg.Rules.Heading,
+			Description: cfg.Rules.Description,
 		}
 
 		err := views.RenderRules(w, data)

@@ -8,9 +8,14 @@ import (
 
 func TestWhereHandler(t *testing.T) {
 
-	cfg := config.Config{
-		SiteName: "Club Manager",
+	whereCfg := config.WhereConfig{
+		Title: "Où de test",
 	}
 
-	testHandler(t, "/", "Où - "+cfg.SiteName, WhereHandler(cfg))
+	cfg := config.Config{
+		SiteName: "Club Manager",
+		Where:    whereCfg,
+	}
+
+	testHandler(t, "/where", "Où de test", WhereHandler(cfg))
 }

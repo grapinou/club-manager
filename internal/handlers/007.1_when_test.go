@@ -8,9 +8,14 @@ import (
 
 func TestWhenHandler(t *testing.T) {
 
-	cfg := config.Config{
-		SiteName: "Club Manager",
+	whenCfg := config.WhenConfig{
+		Title: "Quand de test",
 	}
 
-	testHandler(t, "/", "Quand - "+cfg.SiteName, WhenHandler(cfg))
+	cfg := config.Config{
+		SiteName: "Club Manager",
+		When:     whenCfg,
+	}
+
+	testHandler(t, "/when", "Quand de test", WhenHandler(cfg))
 }

@@ -13,7 +13,7 @@ func WhenHandler(cfg config.Config) http.HandlerFunc {
 
 		data := views.WhenData{
 			SiteName:    cfg.SiteName,
-			Title:       "Quand - " + cfg.SiteName,
+			Title:       cfg.When.Title + " - " + cfg.SiteName,
 			Heading:     cfg.When.Heading,
 			Description: cfg.When.Description,
 		}
