@@ -2,16 +2,29 @@
 
 <h1>{{ .Heading }}</h1>
 
-<p>
+<p class="lead">
 {{ .Description }}
 </p>
 
-<p>
-    {{ .EmailAddress }}
-</p>
+<div class="mt-4">
 
-<p> 
-    {{ .PhoneNumber }} 
-</p>
+    <p class="mb-2">
+        <strong>Email :</strong>
+
+        <a href="mailto:{{ .EmailAddress }}">
+            {{ .EmailAddress }}
+        </a>
+    </p>
+
+    <p class="mb-0">
+        <strong>Téléphone :</strong>
+
+        <a href="tel:{{ .PhoneNumber }}">
+            {{ .PhoneNumber }}
+        </a>
+    </p>
+
+</div>
+
 
 {{ end }}
