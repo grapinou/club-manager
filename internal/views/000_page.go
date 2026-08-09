@@ -6,7 +6,7 @@ import (
 	"io"
 )
 
-// homeFiles contient les fichiers intégrés correspondant
+// pageFiles contient les fichiers intégrés correspondant
 // au template de la page d'accueil.
 
 //go:embed templates/layouts/base.html
@@ -20,7 +20,7 @@ type PageData struct {
 	Description string
 }
 
-// homeTemplate représente le fichier HTML analysé par Go.
+// pageTemplate représente le fichier HTML analysé par Go.
 //
 // template.Must arrête immédiatement le programme si le template
 // contient une erreur de syntaxe.
@@ -31,7 +31,7 @@ var pageTemplate = template.Must(
 	),
 )
 
-// RenderHome exécute le template de la page d'accueil
+// RenderPage exécute le template de la page d'accueil
 // et écrit le résultat dans la destination reçue.
 // donne le nom défni par {{ define }} et non le nom du fichier
 func RenderPage(w io.Writer, data PageData) error {

@@ -18,6 +18,9 @@ func New(cfg config.Config) *http.ServeMux {
 	mux.HandleFunc("GET /when", handlers.WhenHandler(cfg))
 	mux.HandleFunc("GET /rules", handlers.RulesHandler(cfg))
 
+	staticFiles := http.FileServer(http.Dir("static"))
+	mux.Handle("GET /static/", http.StripPrefix("/static/", staticFiles))
+
 	return mux
 
 }
