@@ -10,7 +10,9 @@
     "club": {
         "title": "Le Club",
         "heading": "Team Cat Ride",
-        "description": "TCR est là pour t'accompagner et te faire progresser en vélo."
+        "description": "TCR est là pour t'accompagner et te faire progresser en vélo.",
+        "image": "/static/images/club.jpeg",
+        "image_alt": "L'ensemble des accompagnateurs"
     },
     "contact": {
         "title": "Contact",

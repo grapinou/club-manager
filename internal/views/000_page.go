@@ -18,6 +18,8 @@ type PageData struct {
 	Title       string
 	Heading     string
 	Description string
+	Image       string
+	ImageAlt    string
 }
 
 // pageTemplate représente le fichier HTML analysé par Go.

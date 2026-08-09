@@ -16,6 +16,8 @@ func pageHandler(siteName string, page config.PageConfig) http.HandlerFunc {
 			Title:       page.Title + " - " + siteName,
 			Heading:     page.Heading,
 			Description: page.Description,
+			Image:       page.Image,
+			ImageAlt:    page.ImageAlt,
 		}
 
 		err := views.RenderPage(w, data)

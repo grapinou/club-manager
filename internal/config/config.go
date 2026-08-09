@@ -22,6 +22,8 @@ type PageConfig struct {
 	Title       string `json:"title"`
 	Heading     string `json:"heading"`
 	Description string `json:"description"`
+	Image       string `json:"image"`
+	ImageAlt    string `json:"image_alt"`
 }
 
 type ContactConfig struct {
