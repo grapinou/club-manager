@@ -1,6 +1,7 @@
 
 ---
 
+git-commit: 31b6a8d
 
 > [!info] Objectif du jalon  
 > Cette fiche représente un **état figé de Club Manager**.
