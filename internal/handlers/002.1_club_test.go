@@ -11,7 +11,7 @@ func TestClubHandler(t *testing.T) {
 	// pour vérifier que la transmission de données provient de ce cfg
 	// on le remplace par un autre nom
 
-	clubCfg := config.ClubConfig{
+	clubCfg := config.PageConfig{
 		Title: "Le Club de test",
 	}
 

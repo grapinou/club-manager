@@ -1100,3 +1100,4 @@ différentes associations
 ```
 
 **Ce jalon marque le passage d'un site contenant des données configurables à un véritable socle de site associatif configurable.**
+

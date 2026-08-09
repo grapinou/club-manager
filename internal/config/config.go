@@ -10,21 +10,15 @@ import (
 // chargés au démarrage de l'application.
 type Config struct {
 	SiteName string        `json:"site_name"`
-	Home     HomeConfig    `json:"home"`
-	Club     ClubConfig    `json:"club"`
+	Home     PageConfig    `json:"home"`
+	Club     PageConfig    `json:"club"`
 	Contact  ContactConfig `json:"contact"`
-	Rules    RulesConfig   `json:"rules"`
-	Where    WhereConfig   `json:"where"`
-	When     WhenConfig    `json:"when"`
+	Rules    PageConfig    `json:"rules"`
+	Where    PageConfig    `json:"where"`
+	When     PageConfig    `json:"when"`
 }
 
-type HomeConfig struct {
-	Title       string `json:"title"`
-	Heading     string `json:"heading"`
-	Description string `json:"description"`
-}
-
-type ClubConfig struct {
+type PageConfig struct {
 	Title       string `json:"title"`
 	Heading     string `json:"heading"`
 	Description string `json:"description"`
@@ -36,24 +30,6 @@ type ContactConfig struct {
 	Description  string `json:"description"`
 	EmailAddress string `json:"email_address"`
 	PhoneNumber  string `json:"phone_number"`
-}
-
-type RulesConfig struct {
-	Title       string `json:"title"`
-	Heading     string `json:"heading"`
-	Description string `json:"description"`
-}
-
-type WhereConfig struct {
-	Title       string `json:"title"`
-	Heading     string `json:"heading"`
-	Description string `json:"description"`
-}
-
-type WhenConfig struct {
-	Title       string `json:"title"`
-	Heading     string `json:"heading"`
-	Description string `json:"description"`
 }
 
 // Load ouvre le fichier situé au chemin reçu,

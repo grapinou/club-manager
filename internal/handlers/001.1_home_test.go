@@ -8,7 +8,7 @@ import (
 
 func TestHomeHandler(t *testing.T) {
 
-	homeCfg := config.HomeConfig{
+	homeCfg := config.PageConfig{
 		Title: "Accueil de test",
 	}
 

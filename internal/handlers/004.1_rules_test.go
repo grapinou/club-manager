@@ -8,7 +8,7 @@ import (
 
 func TestRulesHandler(t *testing.T) {
 
-	rulesCfg := config.RulesConfig{
+	rulesCfg := config.PageConfig{
 		Title: "Règlement de test",
 	}
 

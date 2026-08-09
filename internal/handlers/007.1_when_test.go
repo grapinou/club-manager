@@ -8,7 +8,7 @@ import (
 
 func TestWhenHandler(t *testing.T) {
 
-	whenCfg := config.WhenConfig{
+	whenCfg := config.PageConfig{
 		Title: "Quand de test",
 	}
 

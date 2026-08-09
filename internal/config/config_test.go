@@ -16,13 +16,13 @@ func TestLoad(t *testing.T) {
 
 		SiteName: "TCR Club Manager",
 
-		Home: HomeConfig{
+		Home: PageConfig{
 			Title:       "Accueil test",
 			Heading:     "Bienvenue !",
 			Description: "La Team Cat Ride (TCR) vous accueille sur son site.",
 		},
 
-		Club: ClubConfig{
+		Club: PageConfig{
 			Title:       "Le Club test",
 			Heading:     "Team Cat Ride",
 			Description: "TCR est là pour t'accompagner et te faire progresser en vélo.",
@@ -36,19 +36,19 @@ func TestLoad(t *testing.T) {
 			PhoneNumber:  "00-01-02-03-04",
 		},
 
-		Rules: RulesConfig{
+		Rules: PageConfig{
 			Title:       "Règlement test",
 			Heading:     "Règlement intérieur",
 			Description: "Chaque cat rider doit être poli et à l'heure.",
 		},
 
-		Where: WhereConfig{
+		Where: PageConfig{
 			Title:       "Où test",
 			Heading:     "Où nous trouver ?",
 			Description: "Nous sommes au 9 rue Chat Botté, à Catville",
 		},
 
-		When: WhenConfig{
+		When: PageConfig{
 			Title:       "Quand test",
 			Heading:     "Quand nous trouver ?",
 			Description: "Nous sommes disponibles tous les soirs de 20h à 22h. Pour davantage d'informations, nous contacter.",

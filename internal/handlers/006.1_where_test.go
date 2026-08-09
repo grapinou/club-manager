@@ -8,7 +8,7 @@ import (
 
 func TestWhereHandler(t *testing.T) {
 
-	whereCfg := config.WhereConfig{
+	whereCfg := config.PageConfig{
 		Title: "Où de test",
 	}
 

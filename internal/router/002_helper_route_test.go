@@ -20,11 +20,11 @@ func testRoute(
 	// indépendance du test vis à vis de load.
 	// construction de la donnée nécessaire pour tester la route
 
-	homeCfg := config.HomeConfig{
+	homeCfg := config.PageConfig{
 		Title: "Accueil",
 	}
 
-	clubCfg := config.ClubConfig{
+	clubCfg := config.PageConfig{
 		Title: "Le Club",
 	}
 
@@ -32,14 +32,14 @@ func testRoute(
 		Title: "Contact",
 	}
 
-	rulesCfg := config.RulesConfig{
+	rulesCfg := config.PageConfig{
 		Title: "Règlement",
 	}
-	whereCfg := config.WhereConfig{
+	whereCfg := config.PageConfig{
 		Title: "Où",
 	}
 
-	whenCfg := config.WhenConfig{
+	whenCfg := config.PageConfig{
 		Title: "Quand",
 	}
 	cfg := config.Config{
