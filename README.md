@@ -2,65 +2,276 @@
 
 Club Manager est une application de gestion d'associations développée en Go.
 
-L'objectif du projet est de concevoir une plateforme robuste, modulaire et facilement maintenable permettant de répondre aux besoins courants des associations, tout en mettant en œuvre les bonnes pratiques de développement logiciel.
+L'objectif du projet est de construire progressivement une application simple, robuste et maintenable pouvant servir de base à différents types d'associations.
 
-Ce projet est également un support d'apprentissage et de démonstration de compétences. Chaque choix d'architecture est réfléchi et documenté afin de construire une application pérenne et évolutive.
+Le projet sert également de support d'apprentissage : les choix d'architecture sont introduits progressivement, documentés et conservés dans l'historique Git.
 
-## Fonctionnalités prévues
+---
 
-* Gestion des adhérents
-* Gestion des rôles et des permissions
-* Authentification des utilisateurs
-* Gestion des cotisations
-* Gestion des cours et des événements
-* Gestion documentaire
-* Comptabilité
-* Modules optionnels (boutique, statistiques, etc.)
+## État actuel
 
-## Architecture
+La première version publique de Club Manager permet de disposer d'un petit site d'association configurable.
 
-Le projet repose sur une architecture orientée **backend**.
+Les pages disponibles sont :
 
-Le serveur Go est responsable de l'ensemble de la logique métier :
+* Accueil ;
+* Le club ;
+* Où nous trouver ;
+* Quand nous trouver ;
+* Contact ;
+* Règlement intérieur.
 
-* gestion des requêtes HTTP ;
-* authentification et autorisation ;
-* validation des données ;
-* accès à la base de données ;
-* génération des pages HTML.
+Le contenu principal du site est chargé depuis un fichier de configuration JSON.
 
-L'interface utilisateur est réalisée avec les templates HTML de Go et enrichie avec HTMX afin d'offrir une navigation fluide sans dépendre d'un framework JavaScript.
+L'application prend également en charge :
 
-## Technologies
+* les templates HTML Go ;
+* un layout commun ;
+* une navigation responsive avec Bootstrap ;
+* les fichiers statiques ;
+* les images configurables ;
+* les liens de contact par email et téléphone.
 
-* Go
-* PostgreSQL
-* Goose
-* sqlc
-* HTML Templates
-* HTMX
-* Git
+---
 
-## Objectifs du projet
+## Architecture actuelle
 
-* Concevoir une architecture logicielle claire et maintenable.
-* Mettre en pratique les bonnes pratiques du développement backend.
-* Développer une application facilement extensible grâce à une organisation modulaire.
-* Documenter les choix techniques et les étapes de développement.
-* Constituer un projet de référence pouvant être présenté lors d'un entretien ou d'un concours.
+Le projet suit une architecture volontairement simple :
 
-## État du projet
+```text
+config.json
+    │
+    ▼
+ config.Load()
+    │
+    ▼
+   Config
+    │
+    ▼
+   main
+    │
+    ▼
+  router
+    │
+    ├───────────────┐
+    ▼               ▼
+handlers          static
+    │             files
+    ▼
+  views
+    │
+    ▼
+templates
+    │
+    ▼
+   HTML
+```
 
-🚧 Le projet est actuellement en cours de développement.
+Les principales responsabilités sont séparées entre :
 
+* `cmd/server` : point d'entrée de l'application ;
+* `internal/config` : chargement et représentation de la configuration ;
+* `internal/router` : déclaration des routes HTTP et service des fichiers statiques ;
+* `internal/handlers` : préparation des données nécessaires aux pages ;
+* `internal/views
+  HTML
 
-## Principes de développement
+````
 
-Ce projet est développé selon les principes suivants :
+Les principales responsabilités sont séparées entre :
+
+- `cmd/server` : point d'entrée de l'application ;
+- `internal/config` : chargement et représentation de la configuration ;
+- `internal/router` :` : données de présentation et exécution des templates ;
+- `static` : CSS, images et autres ressources statiques.
+
+---
+
+## Configuration
+
+Le contenu du site est défini dans :
+
+```text
+config/config.json
+````
+
+Exemple :
+
+```json
+{
+    "site_name": "TCR Club Manager",
+
+    "club": {
+        "title": "Le Club",
+        "heading": "Team Cat Ride",
+        "description": "TCR est là pour t'accompagner et te faire progresser en vélo.",
+        "image": "/static/images/club.jpeg",
+        "image_alt": "L'ensemble des accompagnateurs"
+    }
+}
+```
+
+Cette approche permet de modifier une partie importante du contenu du site sans modifier le code Go.
+
+---
+
+## Fichiers statiques
+
+Les ressources statiques sont placées dans :
+
+```text
+static/
+├── css/
+└── images/
+```
+
+Elles sont accessibles depuis l'URL :
+
+```text
+/static/
+```
+
+Par exemple :
+
+```text
+/static/images/club.jpeg
+```
+
+correspond à :
+
+```text
+static/images/club.jpeg
+```
+
+dans le projet.
+
+---
+
+## Interface
+
+L'interface utilise :
+
+* les templates HTML de Go ;
+* Bootstrap pour la mise en page et le responsive ;
+* un fichier CSS local pour les personnalisations spécifiques.
+
+Bootstrap est volontairement utilisé de manière simple afin de fournir rapidement une interface propre sans faire du développement frontend le sujet principal du projet.
+
+---
+
+## Lancer le projet
+
+Depuis la racine du dépôt :
+
+```bash
+go run ./cmd/server
+```
+
+Le serveur est alors disponible à l'adresse :
+
+```text
+http://localhost:8080
+```
+
+---
+
+## Tests
+
+Pour exécuter les tests :
+
+```bash
+go test ./...
+```
+
+Le projet peut également être vérifié avec :
+
+```bash
+go vet ./...
+```
+
+et formaté avec :
+
+```bash
+go fmt ./...
+```
+
+---
+
+## Technologies actuellement utilisées
+
+* Go ;
+* bibliothèque standard `net/http` ;
+* templates HTML Go ;
+* JSON ;
+* Bootstrap ;
+* Git.
+
+---
+
+## Évolutions prévues
+
+Club Manager a vocation à évoluer progressivement vers une véritable application de gestion d'association.
+
+Les prochaines étapes pourront notamment introduire :
+
+* PostgreSQL ;
+* Goose pour les migrations ;
+* sqlc pour l'accès aux données ;
+* gestion des adhérents ;
+* gestion des rôles et permissions ;
+* authentification ;
+* cotisations ;
+* cours et événements ;
+* HTMX pour certaines interactions dynamiques.
+
+Ces fonctionnalités ne font pas encore partie de la version actuelle.
+
+---
+
+## Principe de développement
+
+Le projet suit quelques principes simples :
 
 * privilégier la simplicité avant la complexité ;
-* écrire un code lisible et facilement maintenable ;
-* séparer clairement la logique métier de l'accès aux données et de la présentation ;
-* documenter les décisions d'architecture ;
-* faire évoluer l'application de manière incrémentale en conservant un historique Git clair et cohérent.
+* écrire du code lisible et maintenable ;
+* séparer clairement les responsabilités ;
+* ne créer une abstraction que lorsqu'un besoin réel apparaît ;
+* faire évoluer l'application par petites étapes ;
+* tester régulièrement ;
+* documenter les choix techniques ;
+* conserver un historique Git clair.
+
+La démarche générale peut être résumée ainsi :
+
+```text
+Écrire simplement
+        ↓
+Observer les besoins
+        ↓
+Identifier les responsabilités
+        ↓
+Faire évoluer l'architecture
+```
+
+---
+
+## Objectif à long terme
+
+Club Manager doit devenir une application générique pouvant être adaptée à différentes associations tout en conservant un backend commun.
+
+Le projet constitue également un support pour étudier et mettre en pratique des notions de développement logiciel telles que :
+
+* architecture ;
+* HTTP ;
+* configuration ;
+* templates ;
+* bases de données ;
+* tests ;
+* authentification ;
+* autorisation ;
+* séparation des responsabilités.
+
+
+
+
 
