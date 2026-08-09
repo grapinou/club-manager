@@ -28,18 +28,44 @@
 
 <body>
 
-    <nav>
-        <a href="/">Accueil</a>
-        <a href="/club">Le club</a>
-        <a href="/where">Où ?</a>
-        <a href="/when">Quand ?</a>
-        <a href="/contact">Contact</a>
-        <a href="/rules">Règlement</a>
-    </nav>
 
-    <header>
-        <p>{{ .SiteName }}</p>
-    </header>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+
+        <a class="navbar-brand" href="/">
+            {{ .SiteName }}
+        </a>
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar"
+            aria-expanded="false"
+            aria-label="Afficher la navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+            class="collapse navbar-collapse"
+            id="mainNavbar"
+        >
+            <div class="navbar-nav">
+                <a class="nav-link" href="/">Accueil</a>
+                <a class="nav-link" href="/club">Le club</a>
+                <a class="nav-link" href="/where">Où ?</a>
+                <a class="nav-link" href="/when">Quand ?</a>
+                <a class="nav-link" href="/contact">Contact</a>
+                <a class="nav-link" href="/rules">Règlement</a>
+            </div>
+        </div>
+
+    </div>
+</nav>
+
 
     <main>
         {{ template "content" . }}
