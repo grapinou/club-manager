@@ -10,10 +10,10 @@ import (
 // au template de la page d'accueil.
 
 //go:embed templates/layouts/base.html
-//go:embed templates/pages/001_home.html
-var homeFiles embed.FS
+//go:embed templates/pages/000_page.html
+var pageFiles embed.FS
 
-type HomeData struct {
+type PageData struct {
 	SiteName    string
 	Title       string
 	Heading     string
@@ -24,18 +24,20 @@ type HomeData struct {
 //
 // template.Must arrête immédiatement le programme si le template
 // contient une erreur de syntaxe.
-var homeTemplate = template.Must(
-	template.ParseFS(homeFiles,
+var pageTemplate = template.Must(
+	template.ParseFS(pageFiles,
 		"templates/layouts/base.html",
-		"templates/pages/001_home.html"),
+		"templates/pages/000_page.html",
+	),
 )
 
 // RenderHome exécute le template de la page d'accueil
 // et écrit le résultat dans la destination reçue.
-func RenderHome(w io.Writer, data HomeData) error {
-	return homeTemplate.ExecuteTemplate(
+// donne le nom défni par {{ define }} et non le nom du fichier
+func RenderPage(w io.Writer, data PageData) error {
+	return pageTemplate.ExecuteTemplate(
 		w,
-		"base", // donne le nom défni par {{ define }} et non le nom du fichier
+		"base",
 		data,
 	)
 }

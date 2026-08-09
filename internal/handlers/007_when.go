@@ -11,14 +11,14 @@ func WhenHandler(cfg config.Config) http.HandlerFunc {
 
 	return func(w http.ResponseWriter, r *http.Request) {
 
-		data := views.WhenData{
+		data := views.PageData{
 			SiteName:    cfg.SiteName,
 			Title:       cfg.When.Title + " - " + cfg.SiteName,
 			Heading:     cfg.When.Heading,
 			Description: cfg.When.Description,
 		}
 
-		err := views.RenderWhen(w, data)
+		err := views.RenderPage(w, data)
 
 		if err != nil {
 			http.Error(

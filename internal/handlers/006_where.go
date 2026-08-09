@@ -11,14 +11,14 @@ func WhereHandler(cfg config.Config) http.HandlerFunc {
 
 	return func(w http.ResponseWriter, r *http.Request) {
 
-		data := views.WhereData{
+		data := views.PageData{
 			SiteName:    cfg.SiteName,
 			Title:       cfg.Where.Title + " - " + cfg.SiteName,
 			Heading:     cfg.Where.Heading,
 			Description: cfg.Where.Description,
 		}
 
-		err := views.RenderWhere(w, data)
+		err := views.RenderPage(w, data)
 
 		if err != nil {
 			http.Error(

@@ -11,14 +11,14 @@ func ClubHandler(cfg config.Config) http.HandlerFunc {
 
 	return func(w http.ResponseWriter, r *http.Request) {
 
-		data := views.ClubData{
+		data := views.PageData{
 			SiteName:    cfg.SiteName,
 			Title:       cfg.Club.Title + " - " + cfg.SiteName,
 			Heading:     cfg.Club.Heading,
 			Description: cfg.Club.Description,
 		}
 
-		err := views.RenderClub(w, data)
+		err := views.RenderPage(w, data)
 
 		if err != nil {
 			http.Error(

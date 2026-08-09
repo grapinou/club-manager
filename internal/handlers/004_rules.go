@@ -11,14 +11,14 @@ func RulesHandler(cfg config.Config) http.HandlerFunc {
 
 	return func(w http.ResponseWriter, r *http.Request) {
 
-		data := views.RulesData{
+		data := views.PageData{
 			SiteName:    cfg.SiteName,
 			Title:       cfg.Rules.Title + " - " + cfg.SiteName,
 			Heading:     cfg.Rules.Heading,
 			Description: cfg.Rules.Description,
 		}
 
-		err := views.RenderRules(w, data)
+		err := views.RenderPage(w, data)
 
 		if err != nil {
 			http.Error(

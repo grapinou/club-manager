@@ -11,14 +11,14 @@ func HomeHandler(cfg config.Config) http.HandlerFunc {
 
 	return func(w http.ResponseWriter, r *http.Request) {
 
-		data := views.HomeData{
+		data := views.PageData{
 			SiteName:    cfg.SiteName,
 			Title:       cfg.Home.Title + " - " + cfg.SiteName,
 			Heading:     cfg.Home.Heading,
 			Description: cfg.Home.Description,
 		}
 
-		err := views.RenderHome(w, data)
+		err := views.RenderPage(w, data)
 
 		if err != nil {
 			http.Error(
