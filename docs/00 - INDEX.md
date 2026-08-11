@@ -52,9 +52,9 @@ Exemple :
 
 Fiches consacrées à la préparation de l’environnement, à Git, à GitHub et à l’initialisation du module Go.
 
-- [[Projet_Go/00 - Initialisation projet Go/00 - INITIALISATION PROJET|Initialisation du projet]]
+- [[00 - INITIALISATION PROJET|Initialisation du projet]]
     
-- [[Projet_Go/00 - Initialisation projet Go/01 - Installer la dernière version de Go|Installer la dernière version de Go]]
+- [[01 - Installer la dernière version de Go|Installer la dernière version de Go]]
     
     - [[Projet_Go/00 - Initialisation projet Go/01.01 - wget|wget]]
         
@@ -62,19 +62,19 @@ Fiches consacrées à la préparation de l’environnement, à Git, à GitHub et
         
     - [[Projet_Go/00 - Initialisation projet Go/01.03 - absolu|Chemins absolus et relatifs]]
         
-- [[Projet_Go/00 - Initialisation projet Go/02 - Vérifier si Git est bien installé|Vérifier si Git est installé]]
+- [[02 - Vérifier si Git est bien installé|Vérifier si Git est installé]]
     
-- [[Projet_Go/00 - Initialisation projet Go/03 - git init|Initialiser un dépôt Git]]
+- [[03 - git init|Initialiser un dépôt Git]]
     
-- [[Projet_Go/00 - Initialisation projet Go/04 - Ajouter .gitignore|Ajouter un fichier .gitignore]]
+- [[04 - Ajouter .gitignore|Ajouter un fichier .gitignore]]
     
-- [[Projet_Go/00 - Initialisation projet Go/05 - Premier commit|Effectuer le premier commit]]
+- [[05 - Premier commit|Effectuer le premier commit]]
     
-- [[Projet_Go/00 - Initialisation projet Go/06 - Créer le dépôt GitHub|Créer le dépôt GitHub]]
+- [[06 - Créer le dépôt GitHub|Créer le dépôt GitHub]]
     
-    - [[Projet_Go/00 - Initialisation projet Go/06.01 - clé ssh|Clé SSH]]
+    - [[06.01 - clé ssh|Clé SSH]]
         
-- [[Projet_Go/00 - Initialisation projet Go/07 - go mod init|Initialiser le module Go]]
+- [[07 - go mod init|Initialiser le module Go]]
     
 
 ---
@@ -94,21 +94,21 @@ Fiches consacrées à l’organisation des dossiers et à la mise en place de l�
 
 ### 00 — Serveur HTTP
 
-- [[Projet_Go/Go/00 - SERVEUR GO|Serveur Go]]
+- [[00 - SERVEUR GO|Serveur Go]]
     
 
 ### 01 — Fonctions
 
-- [[Projet_Go/Go/01 - FONCTION|Fonctions]]
+- [[01 - FONCTION|Fonctions]]
     
-    - [[Projet_Go/Go/01.01 - Fonction exportation|Exportation d’une fonction]]
+    - [[01.01 - Fonction exportation|Exportation d’une fonction]]
         
-    - [[Projet_Go/Go/01.02 - Fonction New|Convention New]]
+    - [[01.02 - Fonction New|Convention New]]
         
 
 ### 02 — Packages
 
-- [[Projet_Go/Go/02 - PACKAGE|Packages]]
+- [[02 - PACKAGE|Packages]]
     
     - [[Projet_Go/Go/02.01 - Package import|Imports de packages]]
         
@@ -134,23 +134,23 @@ Fiches consacrées à l’organisation des dossiers et à la mise en place de l�
 
 ### 06 — Affichage et écriture
 
-- [[Projet_Go/Go/06 - PRINT|Fonctions d’affichage]]
+- [[06 - PRINT|Fonctions d’affichage]]
     
-    - [[Projet_Go/Go/06.01 - fmt.Fprintln|fmt.Fprintln]]
+    - [[06.01 - fmt.Fprintln|fmt.Fprintln]]
         
-    - [[Projet_Go/Go/06.02 - io.Writer|io.Writer]]
+    - [[06.02 - io.Writer|io.Writer]]
         
 
 ### 07 — Handlers HTTP
 
-- [[Projet_Go/Go/07 - HANDLER|Handlers HTTP]]
+- [[07 - HANDLER|Handlers HTTP]]
     
 
 ### 08 — Routeur HTTP
 
-- [[Projet_Go/Go/08 - ROUTEUR|Routeur]]
+- [[08 - ROUTEUR|Routeur]]
     
-    - [[Projet_Go/Go/08.01 - Routeur ServeMux|ServeMux]]
+    - [[08.01 - Routeur ServeMux|ServeMux]]
         
 
 ---
@@ -161,13 +161,13 @@ Ces fiches présentent le cycle classique de travail avec Git et les principales
 
 - [[00 - Base Git/00 - BASE GIT|Base Git]]
     
-- [[00 - Base Git/01 - git status|git status]]
+- [[01 - git status|git status]]
     
-- [[00 - Base Git/02 - git add|git add]]
+- [[02 - git add|git add]]
     
-- [[00 - Base Git/03 - git commit|git commit]]
+- [[03 - git commit|git commit]]
     
-- [[00 - Base Git/04 - git push|git push]]
+- [[04 - git push|git push]]
     
 - [[00 - Base Git/05 - git diff|git diff]]
     
@@ -195,15 +195,15 @@ Ces fiches regroupent les commandes Vim utiles pour écrire et modifier du code 
 
 Pour suivre la progression du projet dans l’ordre :
 
-1. [[Projet_Go/00 - Initialisation projet Go/00 - INITIALISATION PROJET|Initialiser le projet]]
+1. [[00 - INITIALISATION PROJET|Initialiser le projet]]
     
 2. [[Projet_Go/01 - Architecture Go/00 - ARCHITECTURE MINIMALE EN GO|Créer l’architecture minimale]]
     
-3. [[Projet_Go/Go/00 - SERVEUR GO|Créer le premier serveur Go]]
+3. [[00 - SERVEUR GO|Créer le premier serveur Go]]
     
-4. [[Projet_Go/Go/01 - FONCTION|Comprendre les fonctions]]
+4. [[01 - FONCTION|Comprendre les fonctions]]
     
-5. [[Projet_Go/Go/02 - PACKAGE|Comprendre les packages]]
+5. [[02 - PACKAGE|Comprendre les packages]]
     
 6. [[Projet_Go/Go/03 - STRUCT ET METHODE|Comprendre les structs et les méthodes]]
     
@@ -211,11 +211,11 @@ Pour suivre la progression du projet dans l’ordre :
     
 8. [[Projet_Go/Go/05 - POINTEUR|Comprendre les pointeurs]]
     
-9. [[Projet_Go/Go/06 - PRINT|Comprendre l’écriture des réponses]]
+9. [[06 - PRINT|Comprendre l’écriture des réponses]]
     
-10. [[Projet_Go/Go/07 - HANDLER|Comprendre les handlers]]
+10. [[07 - HANDLER|Comprendre les handlers]]
     
-11. [[Projet_Go/Go/08 - ROUTEUR|Comprendre le routeur]]
+11. [[08 - ROUTEUR|Comprendre le routeur]]
     
 
 ---
