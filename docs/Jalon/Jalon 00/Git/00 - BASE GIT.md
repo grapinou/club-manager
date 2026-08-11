@@ -42,7 +42,7 @@ Ces commandes permettent de comprendre ce qui s'est passé dans le projet.
 
 ---
 
-## [[07 - Branche]]
+## [[BRANCHE]]
 
 Les branches permettent de développer une fonctionnalité sans modifier directement la branche principale.
 

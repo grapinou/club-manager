@@ -7,7 +7,7 @@ Cette fiche constitue un **jalon figé** de l'architecture de Club Manager.
 
 Elle fait suite à :
 
-- [[00 - Architecture minimale en Go]]
+- [[00 - ARCHITECTURE MINIMALE EN GO]]
     
 - [[01 - SEPARATION DES RESPONSABILITES]]
     

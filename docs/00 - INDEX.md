@@ -56,11 +56,11 @@ Fiches consacrées à la préparation de l’environnement, à Git, à GitHub et
     
 - [[01 - Installer la dernière version de Go|Installer la dernière version de Go]]
     
-    - [[Projet_Go/00 - Initialisation projet Go/01.01 - wget|wget]]
+    - [[01.01 - wget|wget]]
         
-    - [[Projet_Go/00 - Initialisation projet Go/01.02 - tar|tar]]
+    - [[01.02 - tar|tar]]
         
-    - [[Projet_Go/00 - Initialisation projet Go/01.03 - absolu|Chemins absolus et relatifs]]
+    - [[01.03 - absolu|Chemins absolus et relatifs]]
         
 - [[02 - Vérifier si Git est bien installé|Vérifier si Git est installé]]
     
@@ -83,9 +83,9 @@ Fiches consacrées à la préparation de l’environnement, à Git, à GitHub et
 
 Fiches consacrées à l’organisation des dossiers et à la mise en place de l’architecture minimale de Club Manager.
 
-- [[Projet_Go/01 - Architecture Go/00 - ARCHITECTURE MINIMALE EN GO|Architecture minimale en Go]]
+- [[00 - ARCHITECTURE MINIMALE EN GO|Architecture minimale en Go]]
     
-    - [[Projet_Go/01 - Architecture Go/00.01 - mkdir -p|La commande mkdir -p]]
+    - [[00.01 - mkdir -p|La commande mkdir -p]]
         
 
 ---
@@ -120,16 +120,16 @@ Fiches consacrées à l’organisation des dossiers et à la mise en place de l�
 
 ### 04 — Interfaces
 
-- [[Projet_Go/Go/04 - INTERFACE|Interfaces]]
+- [[04 - INTERFACE|Interfaces]]
     
-    - [[Projet_Go/Go/04.01 - Interface composée|Interfaces composées]]
+    - [[04.01 - Interface composée|Interfaces composées]]
         
-    - [[Projet_Go/Go/04.02 - Interface utilisation|Utilisation des interfaces]]
+    - [[04.02 - Interface utilisation|Utilisation des interfaces]]
         
 
 ### 05 — Pointeurs
 
-- [[Projet_Go/Go/05 - POINTEUR|Pointeurs]]
+- [[05 - POINTEUR|Pointeurs]]
     
 
 ### 06 — Affichage et écriture
@@ -159,7 +159,7 @@ Fiches consacrées à l’organisation des dossiers et à la mise en place de l�
 
 Ces fiches présentent le cycle classique de travail avec Git et les principales commandes utilisées pendant le développement.
 
-- [[00 - Base Git/00 - BASE GIT|Base Git]]
+- [[00 - BASE GIT|Base Git]]
     
 - [[01 - git status|git status]]
     
@@ -169,11 +169,11 @@ Ces fiches présentent le cycle classique de travail avec Git et les principales
     
 - [[04 - git push|git push]]
     
-- [[00 - Base Git/05 - git diff|git diff]]
+- [[05 - git diff|git diff]]
     
-- [[00 - Base Git/06 - git log|git log]]
+- [[06 - git log|git log]]
     
-- [[00 - Base Git/07 - BRANCHE|Branches]]
+- [[BRANCHE|Branches]]
     
 
 ---
@@ -182,11 +182,11 @@ Ces fiches présentent le cycle classique de travail avec Git et les principales
 
 Ces fiches regroupent les commandes Vim utiles pour écrire et modifier du code efficacement.
 
-- [[02 - Vim commandes/00 - VIM COMMANDES|Commandes Vim]]
+- [[00 - VIM COMMANDES|Commandes Vim]]
     
-- [[02 - Vim commandes/01 - L'essentiel|L’essentiel]]
+- [[01 - L'essentiel|L’essentiel]]
     
-- [[02 - Vim commandes/02 - Les combinaisons|Les combinaisons utiles]]
+- [[02 - Les combinaisons|Les combinaisons utiles]]
     
 
 ---
@@ -197,7 +197,7 @@ Pour suivre la progression du projet dans l’ordre :
 
 1. [[00 - INITIALISATION PROJET|Initialiser le projet]]
     
-2. [[Projet_Go/01 - Architecture Go/00 - ARCHITECTURE MINIMALE EN GO|Créer l’architecture minimale]]
+2. [[00 - ARCHITECTURE MINIMALE EN GO|Créer l’architecture minimale]]
     
 3. [[00 - SERVEUR GO|Créer le premier serveur Go]]
     
@@ -207,9 +207,9 @@ Pour suivre la progression du projet dans l’ordre :
     
 6. [[Projet_Go/Go/03 - STRUCT ET METHODE|Comprendre les structs et les méthodes]]
     
-7. [[Projet_Go/Go/04 - INTERFACE|Comprendre les interfaces]]
+7. [[04 - INTERFACE|Comprendre les interfaces]]
     
-8. [[Projet_Go/Go/05 - POINTEUR|Comprendre les pointeurs]]
+8. [[05 - POINTEUR|Comprendre les pointeurs]]
     
 9. [[06 - PRINT|Comprendre l’écriture des réponses]]
     
