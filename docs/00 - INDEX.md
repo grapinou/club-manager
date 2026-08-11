@@ -110,12 +110,12 @@ Fiches consacrées à l’organisation des dossiers et à la mise en place de l�
 
 - [[02 - PACKAGE|Packages]]
     
-    - [[Projet_Go/Go/02.01 - Package import|Imports de packages]]
+    - [[02.01 - Package import|Imports de packages]]
         
 
 ### 03 — Structs et méthodes
 
-- [[Projet_Go/Go/03 - STRUCT ET METHODE|Structs et méthodes]]
+- [[03 - STRUCT ET METHODE|Structs et méthodes]]
     
 
 ### 04 — Interfaces
@@ -205,7 +205,7 @@ Pour suivre la progression du projet dans l’ordre :
     
 5. [[02 - PACKAGE|Comprendre les packages]]
     
-6. [[Projet_Go/Go/03 - STRUCT ET METHODE|Comprendre les structs et les méthodes]]
+6. [[03 - STRUCT ET METHODE|Comprendre les structs et les méthodes]]
     
 7. [[04 - INTERFACE|Comprendre les interfaces]]
     
