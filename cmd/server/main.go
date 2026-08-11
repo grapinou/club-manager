@@ -7,8 +7,8 @@ import (
 	"os"
 
 	"github.com/grapinou/club-manager/internal/config"
+	"github.com/grapinou/club-manager/internal/database"
 	"github.com/grapinou/club-manager/internal/router"
-	"github.com/jackc/pgx/v5/pgxpool"
 )
 
 const configPath = "config/config.json"
@@ -25,7 +25,7 @@ func main() {
 
 	ctx := context.Background()
 
-	db, err := pgxpool.New(
+	db, err := database.New(
 		ctx, os.Getenv("DATABASE_URL"),
 	)
 	if err != nil {
