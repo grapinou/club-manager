@@ -13,7 +13,9 @@ func TestMethodNotAllowed(t *testing.T) {
 	cfg := config.Config{
 		SiteName: "Club Manager",
 	}
-	mux := New(cfg)
+
+	queries := FakeQueries{}
+	mux := New(cfg, queries)
 
 	request := httptest.NewRequest(
 		http.MethodPost,

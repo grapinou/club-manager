@@ -52,7 +52,9 @@ func testRoute(
 		When:     whenCfg,
 	}
 
-	mux := New(cfg)
+	queries := FakeQueries{}
+
+	mux := New(cfg, queries)
 
 	request := httptest.NewRequest(http.MethodGet, route, nil)
 	response := httptest.NewRecorder()

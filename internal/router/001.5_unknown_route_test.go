@@ -14,7 +14,9 @@ func TestUnknownRoute(t *testing.T) {
 		SiteName: "Club Manager",
 	}
 
-	mux := New(cfg)
+	queries := FakeQueries{}
+
+	mux := New(cfg, queries)
 
 	request := httptest.NewRequest(
 		http.MethodGet,

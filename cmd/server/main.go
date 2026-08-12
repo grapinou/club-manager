@@ -8,6 +8,7 @@ import (
 
 	"github.com/grapinou/club-manager/internal/config"
 	"github.com/grapinou/club-manager/internal/database"
+	"github.com/grapinou/club-manager/internal/database/dbsqlc"
 	"github.com/grapinou/club-manager/internal/router"
 )
 
@@ -45,7 +46,9 @@ func main() {
 
 	log.Println("Connexion à PostgreSQL établie")
 
-	mux := router.New(cfg)
+	queries := dbsqlc.New(db)
+
+	mux := router.New(cfg, queries)
 
 	log.Println("Serveur lancé sur http://localhost:8080")
 
