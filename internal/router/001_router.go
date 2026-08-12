@@ -18,6 +18,7 @@ func New(cfg config.Config, queries database.Queries) *http.ServeMux {
 	mux.HandleFunc("GET /where", handlers.WhereHandler(cfg))
 	mux.HandleFunc("GET /when", handlers.WhenHandler(cfg))
 	mux.HandleFunc("GET /rules", handlers.RulesHandler(cfg))
+	mux.HandleFunc("POST /members", handlers.PostMemberHandler())
 
 	staticFiles := http.FileServer(http.Dir("static"))
 	mux.Handle("GET /static/", http.StripPrefix("/static/", staticFiles))
