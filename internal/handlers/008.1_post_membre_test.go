@@ -11,10 +11,16 @@ import (
 	"github.com/grapinou/club-manager/internal/database/dbsqlc"
 )
 
-// fake queries côté handler
-type FakeQueries struct{}
+// recordingQueries enregistre les paramètres reçus par CreateMember
+// afin de vérifier ce que le handler transmet à la couche base de données.
+type recordingQueries struct {
+	CreateMemberParams dbsqlc.CreateMemberParams
+}
 
-func (f FakeQueries) CreateMember(ctx context.Context, arg dbsqlc.CreateMemberParams) (dbsqlc.Member, error) {
+func (q *recordingQueries) CreateMember(ctx context.Context, arg dbsqlc.CreateMemberParams) (dbsqlc.Member, error) {
+
+	q.CreateMemberParams = arg
+
 	return dbsqlc.Member{}, nil
 }
 
@@ -22,10 +28,15 @@ func TestPostMemberHandler(t *testing.T) {
 
 	form := url.Values{}
 
-	form.Set("FirstName", "Robin")
-	form.Set("LastName", "Des Bois")
-	form.Set("Birthdate", "1990-05-12")
-	form.Set("Email", "robin.desbois@example.com")
+	firstName := "Robin"
+	lastName := "Des Bois"
+	birthdate := "1990-05-12"
+	email := "robin.desbois@example.com"
+
+	form.Set("FirstName", firstName)
+	form.Set("LastName", lastName)
+	form.Set("Birthdate", birthdate)
+	form.Set("Email", email)
 
 	// attention, la request est en post
 	request := httptest.NewRequest(http.MethodPost, "/members", strings.NewReader(form.Encode()))
@@ -34,7 +45,7 @@ func TestPostMemberHandler(t *testing.T) {
 
 	response := httptest.NewRecorder()
 
-	queries := FakeQueries{}
+	queries := &recordingQueries{}
 
 	PostMemberHandler(queries)(response, request)
 
@@ -56,4 +67,43 @@ func TestPostMemberHandler(t *testing.T) {
 		)
 	}
 
+	if queries.CreateMemberParams.FirstName != firstName {
+		t.Errorf(
+			"prénom obtenu : %q, attendu : %q",
+			queries.CreateMemberParams.FirstName,
+			firstName,
+		)
+	}
+
+	if queries.CreateMemberParams.LastName != lastName {
+		t.Errorf(
+			"nom obtenu : %q, attendu : %q",
+			queries.CreateMemberParams.LastName,
+			lastName,
+		)
+	}
+
+	if !queries.CreateMemberParams.BirthDate.Valid {
+		t.Error("la date de naissance devrait être valide")
+	}
+
+	if queries.CreateMemberParams.BirthDate.Time.Format("2006-01-02") != birthdate {
+		t.Errorf(
+			"date obtenue : %q, attendue : %q",
+			queries.CreateMemberParams.BirthDate.Time.Format("2006-01-02"),
+			birthdate,
+		)
+	}
+
+	if !queries.CreateMemberParams.Email.Valid {
+		t.Error("l'email devrait être valide")
+	}
+
+	if queries.CreateMemberParams.Email.String != email {
+		t.Errorf(
+			"email obtenu : %q, attendu : %q",
+			queries.CreateMemberParams.Email.String,
+			email,
+		)
+	}
 }
