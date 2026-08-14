@@ -1,7 +1,6 @@
 package handlers
 
 import (
-	"fmt"
 	"net/http"
 	"time"
 
@@ -39,6 +38,11 @@ func PostMemberHandler(queries database.Queries) http.HandlerFunc {
 			return
 		}
 
-		fmt.Fprintln(w, "post membre")
+		http.Redirect(
+			w,
+			r,
+			"/members/new",
+			http.StatusSeeOther,
+		)
 	}
 }
