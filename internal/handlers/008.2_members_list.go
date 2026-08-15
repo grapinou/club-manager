@@ -23,13 +23,19 @@ func MembersHandler(cfg config.Config, queries database.Queries) http.HandlerFun
 
 		var memberData []views.MemberData
 
+		email := "Aucun mail"
+
 		for _, member := range members {
+
+			if member.Email.Valid {
+				email = member.Email.String
+			}
 			memberData = append(memberData, views.MemberData{
 				ID:        member.ID,
 				FirstName: member.FirstName,
 				LastName:  member.LastName,
 				BirthDate: member.BirthDate.Time.Format("02/01/2006"),
-				Email:     member.Email.String,
+				Email:     email,
 			})
 		}
 

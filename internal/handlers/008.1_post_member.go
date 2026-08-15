@@ -18,6 +18,8 @@ func PostMemberHandler(queries database.Queries) http.HandlerFunc {
 			return
 		}
 
+		email := r.FormValue("Email")
+
 		datas := dbsqlc.CreateMemberParams{
 			FirstName: r.FormValue("FirstName"),
 			LastName:  r.FormValue("LastName"),
@@ -27,8 +29,8 @@ func PostMemberHandler(queries database.Queries) http.HandlerFunc {
 				Valid: true,
 			},
 			Email: pgtype.Text{
-				String: r.FormValue("Email"),
-				Valid:  true,
+				String: email,
+				Valid:  email != "",
 			},
 		}
 

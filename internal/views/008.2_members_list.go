@@ -28,7 +28,7 @@ var membersListTemplate = template.Must(
 	template.ParseFS(
 		membersListFiles,
 		"templates/layouts/base.html",
-		"tempates/pages/008.2_members_list.html",
+		"templates/pages/008.2_members_list.html",
 	),
 )
 
