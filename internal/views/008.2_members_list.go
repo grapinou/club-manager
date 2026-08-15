@@ -16,6 +16,7 @@ type MemberData struct {
 	LastName  string
 	BirthDate string
 	Email     string
+	CreatedAt string
 }
 
 type MembersData struct {

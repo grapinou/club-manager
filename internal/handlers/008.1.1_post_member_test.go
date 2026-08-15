@@ -15,6 +15,7 @@ import (
 // afin de vérifier ce que le handler transmet à la couche base de données.
 type recordingQueries struct {
 	CreateMemberParams dbsqlc.CreateMemberParams
+	Members            []dbsqlc.Member
 }
 
 func (q *recordingQueries) CreateMember(ctx context.Context, arg dbsqlc.CreateMemberParams) (dbsqlc.Member, error) {
@@ -25,7 +26,7 @@ func (q *recordingQueries) CreateMember(ctx context.Context, arg dbsqlc.CreateMe
 }
 
 func (q *recordingQueries) ListMembers(ctx context.Context) ([]dbsqlc.Member, error) {
-	return nil, nil
+	return q.Members, nil
 }
 
 func TestPostMemberHandler(t *testing.T) {

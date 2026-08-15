@@ -23,10 +23,9 @@ func MembersHandler(cfg config.Config, queries database.Queries) http.HandlerFun
 
 		var memberData []views.MemberData
 
-		email := "Aucun mail"
-
 		for _, member := range members {
 
+			email := "Aucun mail"
 			if member.Email.Valid {
 				email = member.Email.String
 			}
@@ -36,6 +35,7 @@ func MembersHandler(cfg config.Config, queries database.Queries) http.HandlerFun
 				LastName:  member.LastName,
 				BirthDate: member.BirthDate.Time.Format("02/01/2006"),
 				Email:     email,
+				CreatedAt: member.CreatedAt.Time.Format("02/01/2006 15:04"),
 			})
 		}
 

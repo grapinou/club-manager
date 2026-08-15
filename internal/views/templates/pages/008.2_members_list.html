@@ -1,0 +1,29 @@
+{{ define "content" }}
+
+<h1>Liste des membres</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Prénom</th>
+            <th>Nom</th>
+            <th>Date de naissance</th>
+            <th>Email</th>
+            <th>Créé le</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {{ range .Members }}
+        <tr>
+            <td>{{ .FirstName }}</td>
+            <td>{{ .LastName }}</td>
+            <td>{{ .BirthDate }}</td>
+            <td>{{ .Email }}</td>
+            <td>{{ .CreatedAt }}</td>
+        </tr>
+        {{ end }}
+    </tbody>
+</table>
+
+{{ end }}
