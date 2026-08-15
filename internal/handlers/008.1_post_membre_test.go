@@ -24,6 +24,10 @@ func (q *recordingQueries) CreateMember(ctx context.Context, arg dbsqlc.CreateMe
 	return dbsqlc.Member{}, nil
 }
 
+func (q *recordingQueries) ListMembers(ctx context.Context) ([]dbsqlc.Member, error) {
+	return nil, nil
+}
+
 func TestPostMemberHandler(t *testing.T) {
 
 	form := url.Values{}
@@ -49,21 +53,21 @@ func TestPostMemberHandler(t *testing.T) {
 
 	PostMemberHandler(queries)(response, request)
 
-	if response.Code != http.StatusOK {
+	if response.Code != http.StatusSeeOther {
 		t.Errorf(
 			"statut obtenu : %d, statut attendu : %d",
 			response.Code,
-			http.StatusOK,
+			http.StatusSeeOther,
 		)
 	}
 
-	body := response.Body.String()
+	location := response.Header().Get("Location")
 
-	if !strings.Contains(body, "post membre") {
+	if location != "/members/new" {
 		t.Errorf(
-			"la réponse ne contient pas %q ; contenu obtenu : %q",
-			"post membre",
-			body,
+			"redirection obtenue %q ; attendue : %q",
+			location,
+			"/members/new",
 		)
 	}
 

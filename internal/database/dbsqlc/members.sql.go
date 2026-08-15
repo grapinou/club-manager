@@ -57,3 +57,42 @@ func (q *Queries) CreateMember(ctx context.Context, arg CreateMemberParams) (Mem
 	)
 	return i, err
 }
+
+const listMembers = `-- name: ListMembers :many
+SELECT
+    id,
+    first_name,
+    last_name,
+    birth_date,
+    email,
+    created_at
+FROM members
+ORDER BY last_name, first_name
+`
+
+func (q *Queries) ListMembers(ctx context.Context) ([]Member, error) {
+	rows, err := q.db.Query(ctx, listMembers)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+	var items []Member
+	for rows.Next() {
+		var i Member
+		if err := rows.Scan(
+			&i.ID,
+			&i.FirstName,
+			&i.LastName,
+			&i.BirthDate,
+			&i.Email,
+			&i.CreatedAt,
+		); err != nil {
+			return nil, err
+		}
+		items = append(items, i)
+	}
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+	return items, nil
+}

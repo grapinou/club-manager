@@ -17,3 +17,14 @@ RETURNING
     birth_date,
     email,
     created_at;
+-- name: ListMembers :many
+SELECT
+    id,
+    first_name,
+    last_name,
+    birth_date,
+    email,
+    created_at
+FROM members
+ORDER BY last_name, first_name;
+
