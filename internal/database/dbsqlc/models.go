@@ -8,11 +8,81 @@ import (
 	"github.com/jackc/pgx/v5/pgtype"
 )
 
-type Member struct {
+type Activity struct {
 	ID        int32
-	FirstName string
-	LastName  string
-	BirthDate pgtype.Date
-	Email     pgtype.Text
+	Name      string
+	IsActive  bool
 	CreatedAt pgtype.Timestamptz
+}
+
+type Membership struct {
+	ID               int32
+	PersonID         int32
+	SeasonID         int32
+	MembershipTypeID int32
+	Status           string
+	JoinedAt         pgtype.Date
+	EndedAt          pgtype.Date
+	CreatedAt        pgtype.Timestamptz
+	UpdatedAt        pgtype.Timestamptz
+}
+
+type MembershipActivity struct {
+	MembershipID int32
+	ActivityID   int32
+}
+
+type MembershipType struct {
+	ID        int32
+	Name      string
+	IsActive  bool
+	CreatedAt pgtype.Timestamptz
+}
+
+type Person struct {
+	ID          int32
+	FirstName   string
+	LastName    string
+	BirthDate   pgtype.Date
+	PhoneNumber pgtype.Text
+	Email       pgtype.Text
+	Address     pgtype.Text
+	CreatedAt   pgtype.Timestamptz
+}
+
+type Role struct {
+	ID   int32
+	Name string
+}
+
+type Season struct {
+	ID        int32
+	Name      string
+	StartsAt  pgtype.Date
+	EndsAt    pgtype.Date
+	IsActive  bool
+	CreatedAt pgtype.Timestamptz
+}
+
+type TrialRegistration struct {
+	ID         int32
+	PersonID   int32
+	ActivityID int32
+	TrialDate  pgtype.Date
+	Status     string
+	CreatedAt  pgtype.Timestamptz
+}
+
+type User struct {
+	ID           int32
+	PersonID     int32
+	LoginEmail   string
+	PasswordHash string
+	IsActive     bool
+	CreatedAt    pgtype.Timestamptz
+}
+
+type UserRole struct {
+	UserID int32
+	RoleID int32
 }
