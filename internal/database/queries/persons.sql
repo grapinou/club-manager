@@ -15,3 +15,8 @@ INSERT INTO persons (
     $6
 )
 RETURNING *;
+
+-- name: GetPersonByID :one
+SELECT *
+FROM persons
+WHERE id = $1;

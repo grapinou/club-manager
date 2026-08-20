@@ -61,3 +61,25 @@ func (q *Queries) CreatePerson(ctx context.Context, arg CreatePersonParams) (Per
 	)
 	return i, err
 }
+
+const getPersonByID = `-- name: GetPersonByID :one
+SELECT id, first_name, last_name, birth_date, phone_number, email, address, created_at
+FROM persons
+WHERE id = $1
+`
+
+func (q *Queries) GetPersonByID(ctx context.Context, id int32) (Person, error) {
+	row := q.db.QueryRow(ctx, getPersonByID, id)
+	var i Person
+	err := row.Scan(
+		&i.ID,
+		&i.FirstName,
+		&i.LastName,
+		&i.BirthDate,
+		&i.PhoneNumber,
+		&i.Email,
+		&i.Address,
+		&i.CreatedAt,
+	)
+	return i, err
+}

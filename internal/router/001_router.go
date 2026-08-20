@@ -20,6 +20,7 @@ func New(cfg config.Config, queries database.Queries) *http.ServeMux {
 	mux.HandleFunc("GET /rules", handlers.RulesHandler(cfg))
 
 	mux.HandleFunc("GET /members/new", handlers.MemberFormHandler(cfg))
+	mux.HandleFunc("POST /persons", handlers.PostPersonHandler(queries))
 
 	staticFiles := http.FileServer(http.Dir("static"))
 	mux.Handle("GET /static/", http.StripPrefix("/static/", staticFiles))
