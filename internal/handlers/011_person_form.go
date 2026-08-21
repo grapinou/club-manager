@@ -7,21 +7,25 @@ import (
 	"github.com/grapinou/club-manager/internal/views"
 )
 
-func MemberFormHandler(cfg config.Config) http.HandlerFunc {
+func PersonFormHandler(cfg config.Config) http.HandlerFunc {
 
 	return func(w http.ResponseWriter, r *http.Request) {
-		data := views.MemberFormData{
+
+		data := views.PersonFormData{
 			SiteName: cfg.SiteName,
-			Title:    "Ajouter un membre - " + cfg.SiteName,
+			Title:    "Ajouter une personne - " + cfg.SiteName,
 		}
 
-		if err := views.RenderMemberForm(w, data); err != nil {
+		err := views.RenderPersonForm(w, data)
+
+		if err != nil {
 			http.Error(
 				w,
-				"impossible d'afficher le formulaire membre",
+				"Erreur interne du serveur",
 				http.StatusInternalServerError,
 			)
 			return
 		}
 	}
+
 }
