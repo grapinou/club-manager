@@ -11,3 +11,7 @@ type FakeQueries struct{}
 func (f FakeQueries) CreatePerson(ctx context.Context, arg dbsqlc.CreatePersonParams) (dbsqlc.Person, error) {
 	return dbsqlc.Person{}, nil
 }
+
+func (f FakeQueries) ListPersons(ctx context.Context) ([]dbsqlc.Person, error) {
+	return []dbsqlc.Person{}, nil
+}

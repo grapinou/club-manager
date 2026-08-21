@@ -18,6 +18,7 @@ type recordingQueries struct {
 	CreatePersonParams dbsqlc.CreatePersonParams
 	CreatePersonCalled bool
 	CreatePersonError  error
+	PersonsList        []dbsqlc.Person
 }
 
 func (q *recordingQueries) CreatePerson(ctx context.Context, arg dbsqlc.CreatePersonParams) (dbsqlc.Person, error) {
@@ -25,6 +26,10 @@ func (q *recordingQueries) CreatePerson(ctx context.Context, arg dbsqlc.CreatePe
 	q.CreatePersonParams = arg
 	q.CreatePersonCalled = true
 	return dbsqlc.Person{}, q.CreatePersonError
+}
+
+func (q *recordingQueries) ListPersons(ctx context.Context) ([]dbsqlc.Person, error) {
+	return q.PersonsList, nil
 }
 
 func TestPostPersonHandler(t *testing.T) {

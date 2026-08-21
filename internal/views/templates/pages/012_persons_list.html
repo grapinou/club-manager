@@ -1,6 +1,6 @@
 {{ define "content" }}
 
-<h1>Liste des membres</h1>
+<h1>Liste des personnes rentrées en contact avec {{ .SiteName}} </h1>
 
 <table class="table">
     <thead>
@@ -8,19 +8,23 @@
             <th>Prénom</th>
             <th>Nom</th>
             <th>Date de naissance</th>
+            <th>Numéro de téléphone</th>
             <th>Email</th>
+            <th>Adresse</th>
             <th>Créé le</th>
         </tr>
     </thead>
 
     <tbody>
-        {{ range .Members }}
+        {{ range .Persons }}
         <tr>
             <td>{{ .FirstName }}</td>
             <td>{{ .LastName }}</td>
             <td>{{ .BirthDate }}</td>
+            <td>{{ .PhoneNumber}}</td>
             <td>{{ .Email }}</td>
-            <td>{{ .CreatedAt }}</td>
+            <td>{{ .Address }}</td>
+            <td>{{ .CreatedAt}}</td>
         </tr>
         {{ end }}
     </tbody>

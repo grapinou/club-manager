@@ -8,4 +8,5 @@ import (
 
 type Queries interface {
 	CreatePerson(ctx context.Context, arg dbsqlc.CreatePersonParams) (dbsqlc.Person, error)
+	ListPersons(ctx context.Context) ([]dbsqlc.Person, error)
 }

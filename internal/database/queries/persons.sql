@@ -20,3 +20,8 @@ RETURNING *;
 SELECT *
 FROM persons
 WHERE id = $1;
+
+-- name: ListPersons :many
+SELECT *
+FROM persons
+ORDER BY last_name, first_name;

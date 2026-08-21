@@ -19,6 +19,7 @@ func New(cfg config.Config, queries database.Queries) *http.ServeMux {
 	mux.HandleFunc("GET /when", handlers.WhenHandler(cfg))
 	mux.HandleFunc("GET /rules", handlers.RulesHandler(cfg))
 
+	mux.HandleFunc("GET /persons", handlers.PersonsListHandler(cfg, queries))
 	mux.HandleFunc("GET /persons/new", handlers.PersonFormHandler(cfg))
 	mux.HandleFunc("POST /persons", handlers.PostPersonHandler(queries))
 

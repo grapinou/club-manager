@@ -83,3 +83,38 @@ func (q *Queries) GetPersonByID(ctx context.Context, id int32) (Person, error) {
 	)
 	return i, err
 }
+
+const listPersons = `-- name: ListPersons :many
+SELECT id, first_name, last_name, birth_date, phone_number, email, address, created_at
+FROM persons
+ORDER BY last_name, first_name
+`
+
+func (q *Queries) ListPersons(ctx context.Context) ([]Person, error) {
+	rows, err := q.db.Query(ctx, listPersons)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+	var items []Person
+	for rows.Next() {
+		var i Person
+		if err := rows.Scan(
+			&i.ID,
+			&i.FirstName,
+			&i.LastName,
+			&i.BirthDate,
+			&i.PhoneNumber,
+			&i.Email,
+			&i.Address,
+			&i.CreatedAt,
+		); err != nil {
+			return nil, err
+		}
+		items = append(items, i)
+	}
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+	return items, nil
+}
