@@ -13,6 +13,10 @@ type recordingPersonQueries struct {
 	CreatePersonCalled bool
 	CreatePersonError  error
 	PersonsList        []dbsqlc.Person
+
+	PersonByID            dbsqlc.Person
+	GetPersonByIDReceived int32
+	GetPersonByIDError    error
 }
 
 func (q *recordingPersonQueries) CreatePerson(ctx context.Context, arg dbsqlc.CreatePersonParams) (dbsqlc.Person, error) {
@@ -27,7 +31,8 @@ func (q *recordingPersonQueries) ListPersons(ctx context.Context) ([]dbsqlc.Pers
 }
 
 func (q *recordingPersonQueries) GetPersonByID(ctx context.Context, id int32) (dbsqlc.Person, error) {
-	return dbsqlc.Person{}, nil
+	q.GetPersonByIDReceived = id
+	return q.PersonByID, q.GetPersonByIDError
 }
 
 func (q *recordingPersonQueries) UpdatePerson(ctx context.Context, arg dbsqlc.UpdatePersonParams) (dbsqlc.Person, error) {
