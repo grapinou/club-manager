@@ -118,3 +118,50 @@ func (q *Queries) ListPersons(ctx context.Context) ([]Person, error) {
 	}
 	return items, nil
 }
+
+const updatePerson = `-- name: UpdatePerson :one
+UPDATE persons
+SET 
+    first_name = $2,
+    last_name = $3,
+    birth_date = $4,
+    phone_number = $5,
+    email = $6,
+    address = $7
+WHERE id = $1
+RETURNING id, first_name, last_name, birth_date, phone_number, email, address, created_at
+`
+
+type UpdatePersonParams struct {
+	ID          int32
+	FirstName   string
+	LastName    string
+	BirthDate   pgtype.Date
+	PhoneNumber pgtype.Text
+	Email       pgtype.Text
+	Address     pgtype.Text
+}
+
+func (q *Queries) UpdatePerson(ctx context.Context, arg UpdatePersonParams) (Person, error) {
+	row := q.db.QueryRow(ctx, updatePerson,
+		arg.ID,
+		arg.FirstName,
+		arg.LastName,
+		arg.BirthDate,
+		arg.PhoneNumber,
+		arg.Email,
+		arg.Address,
+	)
+	var i Person
+	err := row.Scan(
+		&i.ID,
+		&i.FirstName,
+		&i.LastName,
+		&i.BirthDate,
+		&i.PhoneNumber,
+		&i.Email,
+		&i.Address,
+		&i.CreatedAt,
+	)
+	return i, err
+}

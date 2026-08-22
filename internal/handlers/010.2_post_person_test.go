@@ -1,36 +1,13 @@
 package handlers
 
 import (
-	"context"
 	"errors"
 	"net/http"
 	"net/http/httptest"
 	"net/url"
 	"strings"
 	"testing"
-
-	"github.com/grapinou/club-manager/internal/database/dbsqlc"
 )
-
-// recordingQueries enregistre les paramètres reçus par CreatePerson
-// afin de vérifier ce que le handler transmet à la couche base de données.
-type recordingQueries struct {
-	CreatePersonParams dbsqlc.CreatePersonParams
-	CreatePersonCalled bool
-	CreatePersonError  error
-	PersonsList        []dbsqlc.Person
-}
-
-func (q *recordingQueries) CreatePerson(ctx context.Context, arg dbsqlc.CreatePersonParams) (dbsqlc.Person, error) {
-
-	q.CreatePersonParams = arg
-	q.CreatePersonCalled = true
-	return dbsqlc.Person{}, q.CreatePersonError
-}
-
-func (q *recordingQueries) ListPersons(ctx context.Context) ([]dbsqlc.Person, error) {
-	return q.PersonsList, nil
-}
 
 func TestPostPersonHandler(t *testing.T) {
 
@@ -59,7 +36,7 @@ func TestPostPersonHandler(t *testing.T) {
 
 	response := httptest.NewRecorder()
 
-	queries := &recordingQueries{}
+	queries := &recordingPersonQueries{}
 
 	PostPersonHandler(queries)(response, request)
 
@@ -159,7 +136,7 @@ func TestPostPersonHandlerMissingName(t *testing.T) {
 
 	response := httptest.NewRecorder()
 
-	queries := &recordingQueries{}
+	queries := &recordingPersonQueries{}
 
 	PostPersonHandler(queries)(response, request)
 
@@ -197,7 +174,7 @@ func TestPostPersonHandlerInvalidBirthDate(t *testing.T) {
 
 	response := httptest.NewRecorder()
 
-	queries := &recordingQueries{}
+	queries := &recordingPersonQueries{}
 
 	PostPersonHandler(queries)(response, request)
 
@@ -238,7 +215,7 @@ func TestPostPersonHandlerDatabaseError(t *testing.T) {
 
 	response := httptest.NewRecorder()
 
-	queries := &recordingQueries{
+	queries := &recordingPersonQueries{
 		CreatePersonError: errors.New("database error"),
 	}
 

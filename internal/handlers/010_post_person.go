@@ -8,7 +8,7 @@ import (
 	"github.com/grapinou/club-manager/internal/database/dbsqlc"
 )
 
-func PostPersonHandler(queries database.Queries) http.HandlerFunc {
+func PostPersonHandler(queries database.PersonQueries) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 
 		firstName := strings.TrimSpace(r.FormValue("FirstName"))

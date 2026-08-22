@@ -15,3 +15,11 @@ func (f FakeQueries) CreatePerson(ctx context.Context, arg dbsqlc.CreatePersonPa
 func (f FakeQueries) ListPersons(ctx context.Context) ([]dbsqlc.Person, error) {
 	return []dbsqlc.Person{}, nil
 }
+
+func (f FakeQueries) GetPersonByID(ctx context.Context, id int32) (dbsqlc.Person, error) {
+	return dbsqlc.Person{}, nil
+}
+
+func (f FakeQueries) UpdatePerson(ctx context.Context, arg dbsqlc.UpdatePersonParams) (dbsqlc.Person, error) {
+	return dbsqlc.Person{}, nil
+}

@@ -25,3 +25,15 @@ WHERE id = $1;
 SELECT *
 FROM persons
 ORDER BY last_name, first_name;
+
+-- name: UpdatePerson :one
+UPDATE persons
+SET 
+    first_name = $2,
+    last_name = $3,
+    birth_date = $4,
+    phone_number = $5,
+    email = $6,
+    address = $7
+WHERE id = $1
+RETURNING *;

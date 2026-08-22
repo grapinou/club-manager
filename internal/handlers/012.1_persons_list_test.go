@@ -18,7 +18,7 @@ func TestPersonsListHandler(t *testing.T) {
 		SiteName: "Club Manager",
 	}
 
-	queries := &recordingQueries{
+	queries := &recordingPersonQueries{
 		PersonsList: []dbsqlc.Person{
 			{
 				ID:        1,

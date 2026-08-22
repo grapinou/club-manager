@@ -1,0 +1,35 @@
+package handlers
+
+import (
+	"context"
+
+	"github.com/grapinou/club-manager/internal/database/dbsqlc"
+)
+
+// recordingPersonQueries enregistre les paramètres reçus par une requête,
+// afin de vérifier ce que le handler transmet à la couche base de données.
+type recordingPersonQueries struct {
+	CreatePersonParams dbsqlc.CreatePersonParams
+	CreatePersonCalled bool
+	CreatePersonError  error
+	PersonsList        []dbsqlc.Person
+}
+
+func (q *recordingPersonQueries) CreatePerson(ctx context.Context, arg dbsqlc.CreatePersonParams) (dbsqlc.Person, error) {
+
+	q.CreatePersonParams = arg
+	q.CreatePersonCalled = true
+	return dbsqlc.Person{}, q.CreatePersonError
+}
+
+func (q *recordingPersonQueries) ListPersons(ctx context.Context) ([]dbsqlc.Person, error) {
+	return q.PersonsList, nil
+}
+
+func (q *recordingPersonQueries) GetPersonByID(ctx context.Context, id int32) (dbsqlc.Person, error) {
+	return dbsqlc.Person{}, nil
+}
+
+func (q *recordingPersonQueries) UpdatePerson(ctx context.Context, arg dbsqlc.UpdatePersonParams) (dbsqlc.Person, error) {
+	return dbsqlc.Person{}, nil
+}

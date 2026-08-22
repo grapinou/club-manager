@@ -8,7 +8,7 @@ import (
 	"github.com/grapinou/club-manager/internal/views"
 )
 
-func PersonsListHandler(cfg config.Config, queries database.Queries) http.HandlerFunc {
+func PersonsListHandler(cfg config.Config, queries database.PersonQueries) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 
 		persons, err := queries.ListPersons(r.Context())
